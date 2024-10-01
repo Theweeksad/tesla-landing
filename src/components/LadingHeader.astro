@@ -1,5 +1,8 @@
 ---
 import Logo from './Logo.astro'
+import Global from '../../public/Global.astro'
+import Support from '../../public/Support.astro'
+import Account from '../../public/Account.astro'
 ---
 
 <header
@@ -21,11 +24,10 @@ class="absolute py-3 px-10 flex items-center top-0 w-full justify-between z-40 "
 	</nav>
 
 	<nav class="flex flex-grow basis-0 justify-end">
-		<ul class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block} [&>li>a]:px-4 [&>li>a]:py-2">
-			<li><a href="#">Soporte</a></li>
-			<li><a href="#">Tienda</a></li>
-			<li><a href="#">Cuenta</a></li>
-			<li><a href="#">Menu</a></li>
+		<ul class="flex space-x-2 text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block} [&>li>a]:px-4 [&>li>a]:py-2">
+			<li><a href="#"><Support/></a></li>
+			<li><a href="#"><Global/></a></li>
+			<li><a href="#"><Account/></a></li>
 		</ul>
 	</nav>
 
@@ -34,6 +36,8 @@ class="absolute py-3 px-10 flex items-center top-0 w-full justify-between z-40 "
 	</div>
 </header>
 
+
+// Neceisto ayuda porque no me sirve esta parte del Script donde la función una box cuando se hace hover sobre la lista
 <script>
 	const listItem = document.querySelector("#landing-header li")
 	const menuBackDrop = document.querySelector("#menu-backdrop ") as HTMLElement
@@ -58,6 +62,8 @@ class="absolute py-3 px-10 flex items-center top-0 w-full justify-between z-40 "
 	})
 </script>
 
+
+// Necesito ayuda en esta parte porque no me sirve el detector de cambiar los colores del texto del nav
 <script>
 	const headerEl = document.querySelector('landing-header') as HTMLElement
 
