@@ -13,53 +13,57 @@ class="landing-section absolute py-3 px-10 flex items-center top-0 w-full justif
 	</div>
 
 	<nav>
-		<ul class="flex text-sm [&>li>a]:trasnsition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block} [&>li>a]:px-4 [&>li>a]:py-2">
-			<li><a href="#">Vehicles</a>
-				
+		<ul class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block} [&>li>a]:px-4 [&>li>a]:py-2">
+			<li class="relative inline-block group">
+				<a href="">Vehicles</a>
+				<ul class="hidden group-hover:block top-0 absolute w-full h-[60vh] bg-white -z-4">
+					<li>Model S</li>
+					<li>Model 3</li>
+					<li>Model X</li>
+					<li>Model Y</li>
+					<li>Cybertruck</li>
+					<li>Help me choose</li>
+				</ul>
 			</li>
-			<li><a href="#">Energy</a></li>
-			<li><a href="#">Charging</a></li>
+			<li class="relative inline-block group">
+				<a href="#">Energy</a>
+				<ul class="hidden group-hover:block">
+					<li>Solar Panels</li>
+					<li>Solar Roof</li>
+					<li>Powerwall</li>
+					<li>Megapack</li>
+				</ul>
+			</li>
+			<li class="relative inline-block group">
+				<a href="#">Charging</a>
+				<ul class="hidden group-hover:block">
+					<li>Charging</li>
+					<li>Home Charging</li>
+					<li>Supercharging</li>
+				</ul>
+			</li>
 			<li><a href="#">Discover</a></li>
-			<li><a href="#">Shop</a></li>
+			<li class="relative inline-block group">
+				<a href="#">Shop</a>
+				<ul class="hidden group-hover:block">
+					<li>Charging</li>
+					<li>Vehicle Accesories</li>
+					<li>Apparel</li>
+					<li>Lifestyle</li>
+				</ul>
+			</li>
+			<li><a href="#">We, Robot</a></li>
 		</ul>
 	</nav>
 
 	<nav class="flex flex-grow basis-0 justify-end">
-		<ul class="flex space-x-2 text-sm [&>li>a]:trasnsition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block} [&>li>a]:px-4 [&>li>a]:py-2">
+		<ul class="flex space-x-2 text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block} [&>li>a]:px-4 [&>li>a]:py-2">
 			<li><a href="#"><Support/></a></li>
 			<li><a href="#"><Global/></a></li>
 			<li><a href="#"><Account/></a></li>
 		</ul>
 	</nav>
-
-	<div id="menu-backdrop"
-	class={`absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)]  translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--higth)] transition-all duration-500 ease-in-out opacity-0 -z-10 `}>
-	</div>
 </header>
-
-<script>
-	const listItem = document.querySelectorAll("#landing-header li")
-	const menuBackDrop = document.querySelector("#menu-backdrop ") as HTMLElement
-
-	listItem.forEach((item) => {
-		item.addEventListener("mouseenter", () => {
-			const { left, top, width, height } = item.getBoundingClientRect()
-
-			menuBackDrop.style.setProperty("--left", `${left}px)`)
-			menuBackDrop.style.setProperty("--top", `${top}px)`)
-			menuBackDrop.style.setProperty("--width", `${width}px)`)
-			menuBackDrop.style.setProperty("--height", `${height}px)`)
-
-			menuBackDrop.style.opacity = "1"
-			menuBackDrop.style.visibility = "visible"
-		})
-
-		item.addEventListener("mouseleave", () => {
-			menuBackDrop.style.opacity = "0"
-			menuBackDrop.style.visibility = "hidden"
-		})
-	})
-</script>
 
 <script>
 	const header = document.querySelector('#landing-header') as HTMLElement
